@@ -11,7 +11,7 @@
 
 Name:           %{pkg_name}
 Version:        2.0.6
-Release:        6%{?dist}
+Release:        7%{?dist}
 Summary:        Conversion between markup formats
 
 License:        GPLv2+
@@ -209,8 +209,16 @@ install -m 0644 -p -D man/pandoc.1 %{buildroot}%{_mandir}/man1/pandoc.1
 
 
 %changelog
+* Mon Mar 17 2025 Jens Petersen  <petersen@redhat.com> - 2.0.6-7
+- rebuild with ghc-cmark-gfm-0.2.6 for various security fixes,
+  see https://github.com/github/cmark-gfm/security for the full list
+  (Sep 2022 to July 2023), including:
+- Resolves: CVE-2023-24824
+- Resolves: CVE-2023-26485
+- Resolves: RHEL-83922
+
 * Thu Apr 14 2022 Jens Petersen <petersen@redhat.com> - 2.0.6-6
-- rebuild with ghc-cmark-gfm-0.2.3 for CVE-2022-24724 (#2074997)
+- rebuild with ghc-cmark-gfm-0.2.3 for CVE-2022-24724 (#2060667)
 - https://github.com/github/cmark-gfm/security/advisories/GHSA-mc3g-88wq-6f4x
 
 * Mon Dec 14 2020 Jens Petersen <petersen@redhat.com> - 2.0.6-5
